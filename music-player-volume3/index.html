@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+  <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+  <!-- Required meta tags -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Maya Music Player</title>
+  <link rel="stylesheet" href="./style.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+
+<body>
+  <h1>MAYA'S AUDIO PLAYER</h1>
+  <div class="music-container"><br>
+    <div class="player" id="1">
+
+      <img src="music-covers/1.jpg" id="cover-photo" class="cover-photo" />
+      <h2 id="audio-name" class="audio-name">song name selected</h2>
+      <h1 id="album-name" class="album-name">album name</h1>
+      <h3 id="artist-name" class="artist-name">Artist name</h3>
+
+
+      <div class="btns">
+        <button type="button" class="previous-btn" onclick="playPreviousSong()">
+          <img src="./buttons/rewind.svg" id="previous-btn" height="25" width="25" />
+        </button>
+
+        <button type="button" class="play-pause-btn" onclick="playPause()">
+          <img src="./buttons/play-pause-icon.svg" id="play-pause-btn" height="25" width="30" />
+        </button>
+
+        <button type="button" class="next-btn" onclick="playNextSong()">
+          <img src="./buttons/fast-forward.svg" id="next-btn" height="25" width="25" />
+        </button>
+      </div>
+
+      <div class="slider">
+        <strong>
+          <span id="current-Time">00:00</span>
+        </strong>
+        <progress id="progressBar" value="0" max="100"></progress>
+        <strong>
+          <span id="song-durationTime">00:00</span>
+        </strong>
+      </div>
+    
+      <!-- ===================================================================================================== -->
+      <div class="songTable">
+        <table class="table table-hover" id="songs">
+          <thead>
+            <tr>
+              <th scope="col">#</th>
+              <th scope="col">Title</th>
+              <th scope="col">Album</th>
+              <th scope="col">Duration</th>
+            </tr>
+          </thead>
+          <tbody id="table-body">
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <!-- loading the scripts for music player -->
+  <!-- <script src="./main.js"></script> -->
+
+  <!-- controls -->
+  <script src="./controls.js"></script>
+
+  <script src="./js/scripts.js" defer></script>
+
+</body>
+
+</html>
